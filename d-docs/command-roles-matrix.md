@@ -1,6 +1,6 @@
 # Command-to-Role Matrix
 
-**GitHub Spec Kit - Who Should Use Which Commands and Why**
+## GitHub Spec Kit - Who Should Use Which Commands and Why
 
 **Date**: 2025-11-04
 **Version**: 1.1
@@ -45,7 +45,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 ### Command Flow
 
-```
+```text
             ┌────────────────────────┐
             │ /speckit.constitution  │ (Optional, run once per project)
             └──────────┬─────────────┘
@@ -105,7 +105,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
         │     /speckit.implement             │ ◄─── Developer (with AI assistance)
         │  (Code generation & execution)     │
         └────────────────────────────────────┘
-```
+```text
 
 ---
 
@@ -157,7 +157,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # Feature enhancement
 /speckit.specify Add analytics dashboard for user engagement metrics
-```
+```text
 
 **Output**:
 - `spec.md` with functional requirements
@@ -202,7 +202,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # Generate business logic checklist
 /speckit.checklist Create checklist for subscription business rules and edge cases
-```
+```text
 
 **Why this role**: Product Owners ensure business requirements are complete before engineering starts
 
@@ -255,7 +255,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # - data-model.md: User, Subscription, Payment entities
 # - contracts/: OpenAPI specs for all endpoints
 # - plan.md: Full technical implementation plan
-```
+```text
 
 **Why this role**: Architects make technical stack and architecture decisions
 
@@ -300,7 +300,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 #   - Coding style guide (snake_case, PascalCase, etc.)
 #   - Architectural overview (system components, directory structure)
 #   - Error & log handling strategy (HTTP codes, logging patterns)
-```
+```text
 
 **Why this role**: Architects establish and document project-wide standards after design is complete
 
@@ -335,7 +335,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # - Goals and constraints (business goals, quality attributes)
 # - Architectural decisions (key decisions with rationale)
 # - Policies and patterns (system-wide standards)
-```
+```text
 
 **Why this role**: Architects create formal architecture documentation for complex systems
 
@@ -357,7 +357,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # API design validation
 /speckit.checklist Create API checklist for REST endpoint design and consistency
-```
+```text
 
 **Why this role**: Architects ensure technical design meets quality standards
 
@@ -382,7 +382,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # - Architecture constraints (e.g., "Microservices, event-driven")
 # - Security standards (e.g., "OWASP Top 10 compliance")
 # - Code quality gates (e.g., "No critical SonarQube issues")
-```
+```text
 
 **Why this role**: Architects define non-negotiable technical principles
 
@@ -439,7 +439,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # Phase 4: User Story 2 - User Login
 - [ ] T008 [P] [US2] Create login endpoint
 ...
-```
+```text
 
 **Why this role**: Tech Leads break down work for the team and manage dependencies
 
@@ -463,7 +463,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 - Missing edge cases
 
 **Example output**:
-```
+```text
 ## Specification Analysis Report
 
 | ID  | Category     | Severity | Location       | Summary                      | Recommendation              |
@@ -478,7 +478,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 - Coverage: 93% (14/15 requirements have tasks)
 - Critical Issues: 1
 - Recommendation: Resolve critical issue before /speckit.implement
-```
+```text
 
 **Why this role**: Tech Leads are responsible for quality and completeness before implementation
 
@@ -517,7 +517,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # Then proceed with tasks
 /speckit.tasks
-```
+```text
 
 **Why this role**: Tech Leads ensure team consistency and AI agent alignment after design is complete
 
@@ -552,7 +552,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # Code review checklist
 /speckit.checklist Create code review checklist for this feature
-```
+```text
 
 **Why this role**: Tech Leads ensure holistic quality across technical and functional domains
 
@@ -617,7 +617,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # ...
 
 # Marks tasks complete: [X] in tasks.md
-```
+```text
 
 **Why this role**: Developers write the actual code
 
@@ -640,7 +640,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # AI asks clarifying questions
 # Developer or Product Owner answers
 # Spec.md updated with clarification
-```
+```text
 
 **Why this role**: Developers discover ambiguities during implementation
 
@@ -675,7 +675,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # Performance checklist
 /speckit.checklist Generate performance checklist for database queries and caching
-```
+```text
 
 **Why this role**: Developers ensure technical quality during implementation
 
@@ -717,7 +717,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # ✅ "Can success criteria be objectively measured? [Measurability]"
 # ✅ "Are error scenarios defined for all failure modes? [Coverage]"
 # ✅ "Are edge cases documented with expected behavior? [Completeness]"
-```
+```text
 
 **Why this role**: QA Engineers validate that requirements are testable before implementation
 
@@ -788,7 +788,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # - Sprint capacity planning
 # - Developer assignment (parallel tasks to different devs)
 # - Risk identification (critical path dependencies)
-```
+```text
 
 **Why this role**: Scrum Masters facilitate planning and track progress
 
@@ -810,7 +810,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # Release readiness checklist
 /speckit.checklist Create release readiness checklist for deployment, documentation, and stakeholder communication
-```
+```text
 
 **Why this role**: Scrum Masters ensure process quality
 
@@ -850,7 +850,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # ✅ "Are data encryption requirements defined for sensitive information? [Completeness]"
 # ✅ "Is the threat model documented and requirements aligned to it? [Traceability]"
 # ✅ "Are rate limiting requirements quantified with specific thresholds? [Clarity]"
-```
+```text
 
 **Why this role**: Security Engineers ensure security is specified before implementation
 
@@ -927,7 +927,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 # ✅ "Are observability requirements defined (logs, metrics, traces)? [Coverage]"
 # ✅ "Are backup and recovery requirements documented? [Completeness]"
 # ✅ "Are scaling requirements quantified with specific thresholds? [Clarity]"
-```
+```text
 
 **Why this role**: DevOps Engineers ensure operational concerns are specified
 
@@ -1033,7 +1033,7 @@ GitHub Spec Kit provides **10 commands** that support different stages of spec-d
 
 # Business logic checklist
 /speckit.checklist Create business logic checklist for edge cases and business rules
-```
+```text
 
 **Why this role**: Business Analysts ensure requirements are complete and clear
 
@@ -1117,7 +1117,7 @@ Engineering Managers should have read access to all commands for:
 
 ### Typical Feature Development Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │ Stage 0: Governance & Project Setup (Engineering Manager + Architect) │
 └─────────────────────────────────────────────────────────────────┘
@@ -1200,7 +1200,7 @@ Engineering Managers should have read access to all commands for:
     16. DevOps Engineer: Reviews deployment tasks, deploys
     17. QA Engineer: Tests against acceptance criteria
     18. Product Owner: Validates against business requirements
-```
+```text
 
 ---
 
@@ -1210,13 +1210,13 @@ Engineering Managers should have read access to all commands for:
 
 **For small features without dedicated architect**
 
-```
+```text
 Product Owner:
   /speckit.specify → /speckit.clarify → /speckit.checklist (UX)
 
 Developer:
   /speckit.plan → /speckit.tasks → /speckit.analyze → /speckit.implement
-```
+```text
 
 ---
 
@@ -1224,7 +1224,7 @@ Developer:
 
 **For large features with multiple stakeholders**
 
-```
+```text
 Product Owner:      /speckit.specify → /speckit.clarify
                            ↓
 Business Analyst:   /speckit.checklist (requirements)
@@ -1241,7 +1241,7 @@ Scrum Master:       Sprint Planning (uses tasks.md)
 Developer:          /speckit.implement
                            ↓
 DevOps:             Deploy
-```
+```text
 
 ---
 
@@ -1249,7 +1249,7 @@ DevOps:             Deploy
 
 **When requirements evolve during development**
 
-```
+```text
 Developer discovers ambiguity:
   /speckit.clarify (with Product Owner)
      ↓
@@ -1258,7 +1258,7 @@ Developer discovers ambiguity:
   /speckit.tasks (regenerate affected tasks)
      ↓
   /speckit.implement (continue)
-```
+```text
 
 ---
 
@@ -1266,7 +1266,7 @@ Developer discovers ambiguity:
 
 **When quality gates are critical (regulated industries)**
 
-```
+```text
 Product Owner:      /speckit.specify
                            ↓
 Multi-Role Review:  /speckit.checklist (multiple domains)
@@ -1288,7 +1288,7 @@ Developer:          /speckit.implement
 GATE: All tests pass, security scan clean
                            ↓
 DevOps:             Deploy
-```
+```text
 
 ---
 
@@ -1298,7 +1298,7 @@ DevOps:             Deploy
 
 **Roles involved**: Product Owner, Solution Architect, Security Engineer, Developer
 
-```
+```text
 Day 1 - Requirements:
   Product Owner: /speckit.specify "Add OAuth2 authentication with Google, GitHub, Microsoft"
   Product Owner: /speckit.clarify (answers: session timeout, refresh token strategy)
@@ -1331,7 +1331,7 @@ Day 5 - Validation:
 Day 6-10 - Implementation:
   Developer: /speckit.implement
   → Executes tasks, marks complete
-```
+```text
 
 ---
 
@@ -1339,7 +1339,7 @@ Day 6-10 - Implementation:
 
 **Roles involved**: Product Owner, Developer
 
-```
+```text
 Bug Report: "Payment processing fails for amounts over $1000"
 
 Product Owner: /speckit.specify "Fix payment processing to support transactions up to $10,000"
@@ -1356,7 +1356,7 @@ Developer: /speckit.tasks
 
 Developer: /speckit.implement
   → Fixes bug, tests pass
-```
+```text
 
 ---
 
@@ -1364,7 +1364,7 @@ Developer: /speckit.implement
 
 **Roles involved**: Product Owner, Solution Architect, Scrum Master, 3 Developers
 
-```
+```text
 Week 1 - Planning:
   Product Owner: /speckit.specify "Create analytics dashboard with user engagement metrics"
   Product Owner: /speckit.clarify (defines metrics, time ranges, filters)
@@ -1398,7 +1398,7 @@ Week 4 - Sprint 3:
   → Sprint 3: US5 (Polish phase - 8 tasks)
   Developers: /speckit.implement
   → Full feature complete
-```
+```text
 
 ---
 
@@ -1406,7 +1406,7 @@ Week 4 - Sprint 3:
 
 **Roles involved**: Product Owner, Security Engineer, Compliance Officer, Solution Architect
 
-```
+```text
 Phase 1 - Specification:
   Product Owner: /speckit.specify "Add patient health record management system"
   Product Owner: /speckit.clarify (scope, access controls, audit requirements)
@@ -1444,7 +1444,7 @@ Phase 4 - Validation:
 Phase 5 - Implementation:
   Developer: /speckit.implement
   → Implements with compliance focus
-```
+```text
 
 ---
 
@@ -1452,7 +1452,7 @@ Phase 5 - Implementation:
 
 **Roles involved**: Engineering Manager, Solution Architect, Tech Lead
 
-```
+```text
 Phase 0 - Governance:
   Engineering Manager: /speckit.constitution
   → Defines principles:
@@ -1483,7 +1483,7 @@ Phase 2 - Implementation:
 Phase 3 - Repeat for other services:
   → Each service follows same workflow
   → Constitution ensures consistency
-```
+```text
 
 ---
 

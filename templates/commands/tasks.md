@@ -18,7 +18,7 @@ scripts:
 
 ```text
 $ARGUMENTS
-```
+```text
 
 You **MUST** consider the user input before proceeding (if not empty).
 
@@ -79,7 +79,7 @@ Every task MUST strictly follow this format:
 
 ```text
 - [ ] [TaskID] [P?] [Story?] Description with file path
-```
+```text
 
 **Format Components**:
 

@@ -20,14 +20,14 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME
 
 # OR initialize in the current directory
 uvx --from git+https://github.com/github/spec-kit.git specify init .
-```
+```text
 
 Pick script type explicitly (optional):
 
 ```bash
 uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME> --script ps  # Force PowerShell
 uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME> --script sh  # Force POSIX shell
-```
+```text
 
 ### Step 2: Define Your Constitution
 
@@ -35,7 +35,7 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME
 
 ```markdown
 /speckit.constitution This project follows a "Library-First" approach. All features must be implemented as standalone libraries first. We use TDD strictly. We prefer functional programming patterns.
-```
+```text
 
 ### Step 3: Create the Spec
 
@@ -43,7 +43,7 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME
 
 ```markdown
 /speckit.specify Build an application that can help me organize my photos in separate photo albums. Albums are grouped by date and can be re-organized by dragging and dropping on the main page. Albums are never in other nested albums. Within each album, photos are previewed in a tile-like interface.
-```
+```text
 
 ### Step 4: Refine the Spec
 
@@ -51,7 +51,7 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME
 
 ```bash
 /speckit.clarify Focus on security and performance requirements.
-```
+```text
 
 ### Step 5: Create a Technical Implementation Plan
 
@@ -59,7 +59,7 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME
 
 ```markdown
 /speckit.plan The application uses Vite with minimal number of libraries. Use vanilla HTML, CSS, and JavaScript as much as possible. Images are not uploaded anywhere and metadata is stored in a local SQLite database.
-```
+```text
 
 ### Step 6: Break Down and Implement
 
@@ -67,19 +67,19 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME
 
 ```markdown
 /speckit.tasks
-```
+```text
 
 Optionally, validate the plan with `/speckit.analyze`:
 
 ```markdown
 /speckit.analyze
-```
+```text
 
 Then, use the `/speckit.implement` slash command to execute the plan.
 
 ```markdown
 /speckit.implement
-```
+```text
 
 ## Detailed Example: Building Taskify
 
@@ -91,7 +91,7 @@ Initialize the project's constitution to set ground rules:
 
 ```markdown
 /speckit.constitution Taskify is a "Security-First" application. All user inputs must be validated. We use a microservices architecture. Code must be fully documented.
-```
+```text
 
 ### Step 2: Define Requirements with `/speckit.specify`
 
@@ -103,7 +103,7 @@ I want five users in two different categories, one product manager and four engi
 different sample projects. Let's have the standard Kanban columns for the status of each task, such as "To Do,"
 "In Progress," "In Review," and "Done." There will be no login for this application as this is just the very
 first testing thing to ensure that our basic features are set up.
-```
+```text
 
 ### Step 3: Refine the Specification
 
@@ -111,13 +111,13 @@ Use the `/speckit.clarify` command to interactively resolve any ambiguities in y
 
 ```bash
 /speckit.clarify I want to clarify the task card details. For each task in the UI for a task card, you should be able to change the current status of the task between the different columns in the Kanban work board. You should be able to leave an unlimited number of comments for a particular card. You should be able to, from that task card, assign one of the valid users.
-```
+```text
 
 You can continue to refine the spec with more details using `/speckit.clarify`:
 
 ```bash
 /speckit.clarify When you first launch Taskify, it's going to give you a list of the five users to pick from. There will be no password required. When you click on a user, you go into the main view, which displays the list of projects. When you click on a project, you open the Kanban board for that project. You're going to see the columns. You'll be able to drag and drop cards back and forth between different columns. You will see any cards that are assigned to you, the currently logged in user, in a different color from all the other ones, so you can quickly see yours. You can edit any comments that you make, but you can't edit comments that other people made. You can delete any comments that you made, but you can't delete comments anybody else made.
-```
+```text
 
 ### Step 4: Validate the Spec
 
@@ -125,7 +125,7 @@ Validate the specification checklist using the `/speckit.checklist` command:
 
 ```bash
 /speckit.checklist
-```
+```text
 
 ### Step 5: Generate Technical Plan with `/speckit.plan`
 
@@ -133,7 +133,7 @@ Be specific about your tech stack and technical requirements:
 
 ```bash
 /speckit.plan We are going to generate this using .NET Aspire, using Postgres as the database. The frontend should use Blazor server with drag-and-drop task boards, real-time updates. There should be a REST API created with a projects API, tasks API, and a notifications API.
-```
+```text
 
 ### Step 6: Validate and Implement
 
@@ -141,13 +141,13 @@ Have your AI agent audit the implementation plan using `/speckit.analyze`:
 
 ```bash
 /speckit.analyze
-```
+```text
 
 Finally, implement the solution:
 
 ```bash
 /speckit.implement
-```
+```text
 
 ## Key Principles
 

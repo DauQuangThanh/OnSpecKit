@@ -16,7 +16,7 @@ The easiest way to get started is to initialize a new project:
 
 ```bash
 uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
-```
+```text
 
 Or initialize in the current directory:
 
@@ -24,7 +24,7 @@ Or initialize in the current directory:
 uvx --from git+https://github.com/github/spec-kit.git specify init .
 # or use the --here flag
 uvx --from git+https://github.com/github/spec-kit.git specify init --here
-```
+```text
 
 ### Specify AI Agent
 
@@ -35,7 +35,7 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <project_name
 uvx --from git+https://github.com/github/spec-kit.git specify init <project_name> --ai gemini
 uvx --from git+https://github.com/github/spec-kit.git specify init <project_name> --ai copilot
 uvx --from git+https://github.com/github/spec-kit.git specify init <project_name> --ai codebuddy
-```
+```text
 
 ### Specify Script Type (Shell vs PowerShell)
 
@@ -52,7 +52,7 @@ Force a specific script type:
 ```bash
 uvx --from git+https://github.com/github/spec-kit.git specify init <project_name> --script sh
 uvx --from git+https://github.com/github/spec-kit.git specify init <project_name> --script ps
-```
+```text
 
 ### Ignore Agent Tools Check
 
@@ -60,7 +60,7 @@ If you prefer to get the templates without checking for the right tools:
 
 ```bash
 uvx --from git+https://github.com/github/spec-kit.git specify init <project_name> --ai claude --ignore-agent-tools
-```
+```text
 
 ## Verification
 
@@ -89,4 +89,4 @@ echo "Configuring Git to use GCM..."
 git config --global credential.helper manager
 echo "Cleaning up..."
 rm gcm-linux_amd64.2.6.1.deb
-```
+```text

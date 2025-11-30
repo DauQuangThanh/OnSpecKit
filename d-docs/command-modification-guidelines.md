@@ -1,6 +1,6 @@
 # Command Modification Guidelines
 
-**GitHub Spec Kit - Minimal Impact Change Guide**
+## GitHub Spec Kit - Minimal Impact Change Guide
 
 **Date**: 2025-10-26
 **Version**: 1.0
@@ -55,7 +55,7 @@ A toolkit that enables AI coding assistants to generate implementations from spe
 
 ### Current Architecture Pattern
 
-```
+```text
 User: specify init
     ↓
 Select agent from AGENT_CONFIG
@@ -67,7 +67,7 @@ Extract to agent folder (.claude/, .gemini/, .cursor/, etc.)
 Agent reads commands from their folder at runtime
     ↓
 Context files maintained via update scripts
-```
+```text
 
 ---
 
@@ -97,7 +97,7 @@ AGENT_CONFIG = {
     },
     # ... more agents
 }
-```
+```text
 
 ### How Agents Work
 
@@ -131,7 +131,7 @@ AGENT_CONFIG = {
     "install_url": "https://newtool.ai/install",
     "requires_cli": True
 },
-```
+```text
 
 ### 2. Release Package Script (REQUIRED for new agents)
 
@@ -154,7 +154,7 @@ newtool)
 
 # In the loop list (around line 195)
 for agent in claude gemini github cursor qwen opencode codex windsurf kilo auggie roo codebuddy amp amazonq newtool; do
-```
+```text
 
 ### 3. Bash Context Update Script (REQUIRED for runtime)
 
@@ -172,7 +172,7 @@ for agent in claude gemini github cursor qwen opencode codex windsurf kilo auggi
 "newtool")
   CONTEXT_FILE=".newtool/NEWTOOL.md"
   ;;
-```
+```text
 
 ### 4. PowerShell Context Update Script (REQUIRED for runtime)
 
@@ -195,7 +195,7 @@ elseif (Test-Path ".newtool/NEWTOOL.md") {
     $agentType = "newtool"
     $contextFile = ".newtool/NEWTOOL.md"
 }
-```
+```text
 
 ### 5. Documentation (RECOMMENDED)
 
@@ -231,7 +231,7 @@ elseif (Test-Path ".newtool/NEWTOOL.md") {
     "install_url": "https://installation-url.com",
     "requires_cli": True  # or False
 },
-```
+```text
 
 4. **Critical**: Ensure the key matches the actual CLI tool name
 
@@ -245,13 +245,13 @@ newagent)
   AGENT_NAME="newagent"
   COMMANDS_DIR=".newagent/commands"
   ;;
-```
+```text
 
 3. Add to agent loop around line 195:
 
 ```bash
 for agent in claude gemini github cursor qwen opencode codex windsurf kilo auggie roo codebuddy amp amazonq newagent; do
-```
+```text
 
 #### Step 3: Update Bash Context Script
 
@@ -262,7 +262,7 @@ for agent in claude gemini github cursor qwen opencode codex windsurf kilo auggi
 "newagent")
   CONTEXT_FILE=".newagent/NEWAGENT.md"
   ;;
-```
+```text
 
 #### Step 4: Update PowerShell Context Script
 
@@ -271,7 +271,7 @@ for agent in claude gemini github cursor qwen opencode codex windsurf kilo auggi
 
 ```powershell
 "newagent" { $contextFile = ".newagent/NEWAGENT.md" }
-```
+```text
 
 3. Add elseif around line 379:
 
@@ -280,7 +280,7 @@ elseif (Test-Path ".newagent/NEWAGENT.md") {
     $agentType = "newagent"
     $contextFile = ".newagent/NEWAGENT.md"
 }
-```
+```text
 
 #### Step 5: Update Documentation
 
@@ -308,7 +308,7 @@ Run through the [Testing Checklist](#testing-checklist) below.
     "folder": ".cursor",
     ...
 }
-```
+```text
 
 ❌ **Wrong**:
 ```python
@@ -317,7 +317,7 @@ Run through the [Testing Checklist](#testing-checklist) below.
     "folder": ".cursor",
     ...
 }
-```
+```text
 
 **Why**: The system uses the dictionary key to check if the CLI tool is installed and executable.
 
@@ -429,7 +429,7 @@ Use this checklist to verify your changes:
 
 # PowerShell testing
 .\scripts\powershell\update-agent-context.ps1 -agent newagent
-```
+```text
 
 - [ ] Context file is found
 - [ ] Context updates successfully
@@ -682,7 +682,7 @@ Use this template when adding a new agent:
     "install_url": "https://installation-instructions-url.com",
     "requires_cli": True  # Set to False if no CLI installation needed
 },
-```
+```text
 
 ### Release Script Template
 
@@ -692,7 +692,7 @@ newagent)
   AGENT_NAME="newagent"
   COMMANDS_DIR=".newagent/commands"
   ;;
-```
+```text
 
 ### Context Script Templates
 
@@ -701,7 +701,7 @@ newagent)
 "newagent")
   CONTEXT_FILE=".newagent/NEWAGENT.md"
   ;;
-```
+```text
 
 **PowerShell** (`scripts/powershell/update-agent-context.ps1`):
 ```powershell
@@ -713,7 +713,7 @@ elseif (Test-Path ".newagent/NEWAGENT.md") {
     $agentType = "newagent"
     $contextFile = ".newagent/NEWAGENT.md"
 }
-```
+```text
 
 ---
 

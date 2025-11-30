@@ -115,7 +115,7 @@ Here's how these commands transform the traditional development workflow:
 4. Write technical specifications (3-4 hours)
 5. Create test plans (2 hours)
 Total: ~12 hours of documentation work
-```
+```text
 
 **SDD with Commands Approach:**
 
@@ -141,7 +141,7 @@ Total: ~12 hours of documentation work
 # - specs/003-chat-system/contracts/ (WebSocket events, REST endpoints)
 # - specs/003-chat-system/quickstart.md (Key validation scenarios)
 # - specs/003-chat-system/tasks.md (Task list derived from the plan)
-```
+```text
 
 In 15 minutes, you have:
 
@@ -173,7 +173,7 @@ The feature specification template explicitly instructs:
 ```text
 - ✅ Focus on WHAT users need and WHY
 - ❌ Avoid HOW to implement (no tech stack, APIs, code structure)
-```
+```text
 
 This constraint forces the LLM to maintain proper abstraction levels. When an LLM might naturally jump to "implement using React with Redux," the template keeps it focused on "users need real-time updates of their data." This separation ensures specifications remain stable even as implementation technologies change.
 
@@ -185,7 +185,7 @@ Both templates mandate the use of `[NEEDS CLARIFICATION]` markers:
 When creating this spec from a user prompt:
 1. **Mark all ambiguities**: Use [NEEDS CLARIFICATION: specific question]
 2. **Don't guess**: If the prompt doesn't specify something, mark it
-```
+```text
 
 This prevents the common LLM behavior of making plausible but potentially incorrect assumptions. Instead of guessing that a "login system" uses email/password authentication, the LLM must mark it as `[NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]`.
 
@@ -198,7 +198,7 @@ The templates include comprehensive checklists that act as "unit tests" for the 
 - [ ] No [NEEDS CLARIFICATION] markers remain
 - [ ] Requirements are testable and unambiguous
 - [ ] Success criteria are measurable
-```
+```text
 
 These checklists force the LLM to self-review its output systematically, catching gaps that might otherwise slip through. It's like giving the LLM a quality assurance framework.
 
@@ -214,7 +214,7 @@ The implementation plan template enforces architectural principles through phase
 #### Anti-Abstraction Gate (Article VIII)
 - [ ] Using framework directly?
 - [ ] Single model representation?
-```
+```text
 
 These gates prevent over-engineering by making the LLM explicitly justify any complexity. If a gate fails, the LLM must document why in the "Complexity Tracking" section, creating accountability for architectural decisions.
 
@@ -226,7 +226,7 @@ The templates enforce proper information architecture:
 **IMPORTANT**: This implementation plan should remain high-level and readable.
 Any code samples, detailed algorithms, or extensive technical specifications
 must be placed in the appropriate `implementation-details/` file
-```
+```text
 
 This prevents the common problem of specifications becoming unreadable code dumps. The LLM learns to maintain appropriate detail levels, extracting complexity to separate files while keeping the main document navigable.
 
@@ -239,7 +239,7 @@ The implementation template enforces test-first development:
 1. Create `contracts/` with API specifications
 2. Create test files in order: contract → integration → e2e → unit
 3. Create source files to make tests pass
-```
+```text
 
 This ordering constraint ensures the LLM thinks about testability and contracts before implementation, leading to more robust and verifiable specifications.
 
@@ -250,7 +250,7 @@ Templates explicitly discourage speculation:
 ```text
 - [ ] No speculative or "might need" features
 - [ ] All phases have clear prerequisites and deliverables
-```
+```text
 
 This stops the LLM from adding "nice to have" features that complicate implementation. Every feature must trace back to a concrete user story with clear acceptance criteria.
 
@@ -282,7 +282,7 @@ Every feature must begin as a standalone library—no exceptions. This forces mo
 Every feature in Specify MUST begin its existence as a standalone library.
 No feature shall be implemented directly within application code without
 first being abstracted into a reusable library component.
-```
+```text
 
 This principle ensures that specifications generate modular, reusable code rather than monolithic applications. When the LLM generates an implementation plan, it must structure features as libraries with clear boundaries and minimal dependencies.
 
@@ -295,7 +295,7 @@ All CLI interfaces MUST:
 - Accept text as input (via stdin, arguments, or files)
 - Produce text as output (via stdout)
 - Support JSON format for structured data exchange
-```
+```text
 
 This enforces observability and testability. The LLM cannot hide functionality inside opaque classes—everything must be accessible and verifiable through text-based interfaces.
 
@@ -309,7 +309,7 @@ No implementation code shall be written before:
 1. Unit tests are written
 2. Tests are validated and approved by the user
 3. Tests are confirmed to FAIL (Red phase)
-```
+```text
 
 This completely inverts traditional AI code generation. Instead of generating code and hoping it works, the LLM must first generate comprehensive tests that define behavior, get them approved, and only then generate implementation.
 
@@ -324,7 +324,7 @@ Section 7.3: Minimal Project Structure
 
 Section 8.1: Framework Trust
 - Use framework features directly rather than wrapping them
-```
+```text
 
 When an LLM might naturally create elaborate abstractions, these articles force it to justify every layer of complexity. The implementation plan template's "Phase -1 Gates" directly enforce these principles.
 
@@ -337,7 +337,7 @@ Tests MUST use realistic environments:
 - Prefer real databases over mocks
 - Use actual service instances over stubs
 - Contract tests mandatory before implementation
-```
+```text
 
 This ensures generated code works in practice, not just in theory.
 
@@ -358,7 +358,7 @@ The implementation plan template operationalizes these articles through concrete
 #### Integration-First Gate (Article IX)
 - [ ] Contracts defined?
 - [ ] Contract tests written?
-```
+```text
 
 These gates act as compile-time checks for architectural principles. The LLM cannot proceed without either passing the gates or documenting justified exceptions in the "Complexity Tracking" section.
 
@@ -381,7 +381,7 @@ Modifications to this constitution require:
 - Explicit documentation of the rationale for change
 - Review and approval by project maintainers
 - Backwards compatibility assessment
-```
+```text
 
 This allows the methodology to learn and improve while maintaining stability. The constitution shows its own evolution with dated amendments, demonstrating how principles can be refined based on real-world experience.
 

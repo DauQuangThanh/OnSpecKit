@@ -20,7 +20,7 @@ agent_scripts:
 
 ```text
 $ARGUMENTS
-```
+```text
 
 You **MUST** consider the user input before proceeding (if not empty).
 
@@ -59,7 +59,7 @@ You **MUST** consider the user input before proceeding (if not empty).
      Task: "Find best practices for {tech} in {domain}"
    ```
 
-3. **Consolidate findings** in `research.md` using format:
+1. **Consolidate findings** in `research.md` using format:
    - Decision: [what was chosen]
    - Rationale: [why chosen]
    - Alternatives considered: [what else evaluated]

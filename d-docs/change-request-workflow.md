@@ -1,6 +1,6 @@
 # Change Request Workflow During Feature Development
 
-**Handling Mid-Development Changes with Spec Kit**
+## Handling Mid-Development Changes with Spec Kit
 
 **Date**: 2025-11-04
 **Version**: 1.1
@@ -37,7 +37,7 @@
 
 ### Decision Tree
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │               CHANGE REQUEST DECISION TREE                              │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -80,7 +80,7 @@ Change Request Received
                 │
                 ▼
    DECISION: Accept or Defer?
-```
+```text
 
 ---
 
@@ -122,13 +122,13 @@ cat tasks.md          # Current tasks and progress
 # - Which sections of plan.md need updates?
 # - Which tasks in tasks.md are affected?
 # - How many tasks are [X] complete vs [ ] incomplete?
-```
+```text
 
 ### Step 2: Calculate Impact Metrics
 
 **Use this template to assess impact:**
 
-```
+```text
 CHANGE REQUEST IMPACT ASSESSMENT
 ════════════════════════════════════════════════════════════════════════
 
@@ -196,7 +196,7 @@ RATIONALE:
 [Explain your recommendation]
 
 ────────────────────────────────────────────────────────────────────────
-```
+```text
 
 ---
 
@@ -206,7 +206,7 @@ RATIONALE:
 
 ### Scenario
 
-```
+```text
 CURRENT STATE:
 ├─ Feature: User Registration
 ├─ Progress: 60% complete (12 of 20 tasks done)
@@ -215,11 +215,11 @@ CURRENT STATE:
 CHANGE REQUEST:
 └─ "Add phone number field to registration form"
    └─ Impact: 1 new field, 2 tasks (3 hours)
-```
+```text
 
 ### Workflow: Accept and Integrate
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │           MINOR CHANGE WORKFLOW (Accept Immediately)                    │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -297,7 +297,7 @@ STEP 6: Update Stakeholders (5 minutes)
 TOTAL TIME OVERHEAD: ~40 minutes for change integration
 TOTAL ADDITIONAL IMPLEMENTATION: 3 hours
 NET IMPACT: 3.5 hours total change cost
-```
+```text
 
 ---
 
@@ -307,7 +307,7 @@ NET IMPACT: 3.5 hours total change cost
 
 ### Scenario
 
-```
+```text
 CURRENT STATE:
 ├─ Feature: User Registration
 ├─ Progress: 60% complete (12 of 20 tasks done)
@@ -316,11 +316,11 @@ CURRENT STATE:
 CHANGE REQUEST:
 └─ "Change authentication from email/password to OAuth2 only"
    └─ Impact: Completely different approach, ~70% rework
-```
+```text
 
 ### Decision: Defer vs. Accept
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                      MAJOR CHANGE DECISION PROCESS                      │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -367,13 +367,13 @@ STEP 3: Make Decision with Stakeholders (30 minutes)
    └─ Recommendation: [Accept or Defer with rationale]
 
    Decision: [ ] Accept Now  [ ] Defer to Next Sprint  [ ] Defer to Backlog
-```
+```text
 
 ---
 
 ### If Decision = ACCEPT (Major Change)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │              MAJOR CHANGE WORKFLOW (Accept - Full Re-Plan)              │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -524,13 +524,13 @@ TOTAL TIME OVERHEAD: 8-14 hours for re-planning
 TOTAL IMPLEMENTATION TIME: ~62 hours (new approach)
 SALVAGED TIME: ~10 hours (reusable work)
 NET CHANGE COST: 60-66 hours (vs. 32 hours to finish original)
-```
+```text
 
 ---
 
 ### If Decision = DEFER (Major Change)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                  MAJOR CHANGE WORKFLOW (Defer)                          │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -587,7 +587,7 @@ STEP 4: Update Stakeholders (15 minutes)
 TOTAL TIME OVERHEAD: 45 minutes (document and communicate)
 CURRENT FEATURE: Delivers on time (32 hours remaining)
 FUTURE FEATURE: OAuth2 (50 hours, next sprint)
-```
+```text
 
 ---
 
@@ -597,7 +597,7 @@ FUTURE FEATURE: OAuth2 (50 hours, next sprint)
 
 ### Scenario
 
-```
+```text
 CURRENT STATE:
 ├─ Feature: User Registration (email/password)
 ├─ Progress: 60% complete
@@ -606,11 +606,11 @@ CURRENT STATE:
 CHANGE REQUEST:
 └─ "Add social login (Google, Facebook, GitHub)"
    └─ This is NEW functionality, not modification of existing
-```
+```text
 
 ### Recommended Approach: Defer as Separate Feature
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │              SCOPE CHANGE WORKFLOW (Defer as Separate)                  │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -660,7 +660,7 @@ STEP 4: Plan Separate Feature for Future
 TOTAL TIME OVERHEAD: 45 minutes (create new spec, communicate)
 CURRENT FEATURE: No impact, delivers on time
 NEW FEATURE: Planned for next sprint (independent)
-```
+```text
 
 ---
 
@@ -668,7 +668,7 @@ NEW FEATURE: Planned for next sprint (independent)
 
 ### Scenario: Change Invalidates Some Completed Work
 
-```
+```text
 CURRENT STATE:
 ├─ 12 of 20 tasks complete [X]
 ├─ Change affects 6 of the 12 completed tasks
@@ -691,7 +691,7 @@ OPTION 3: Hybrid (common)
 ├─ Some completed work discarded (authentication logic)
 └─ Mark partially reusable tasks with comment:
    "<!-- T012: [X] UI reusable, [ ] backend needs rework -->"
-```
+```text
 
 ---
 
@@ -721,7 +721,7 @@ OPTION 3: Hybrid (common)
 - [ ] T022 Implement OAuth2 session management
 
 <!-- Original tasks T008-T019 below... -->
-```
+```text
 
 ---
 
@@ -729,7 +729,7 @@ OPTION 3: Hybrid (common)
 
 ### Template 1: Communicating Accepted Minor Change
 
-```
+```text
 TO: Product Owner, Team, Scrum Master
 SUBJECT: Change Accepted - [Feature Name] - [Brief Change Description]
 
@@ -758,13 +758,13 @@ Implementation continuing with new tasks integrated.
 
 Thanks,
 [Your Name]
-```
+```text
 
 ---
 
 ### Template 2: Communicating Deferred Major Change
 
-```
+```text
 TO: Product Owner, Change Requester, Team
 SUBJECT: Change Deferred - [Feature Name] - [Brief Change Description]
 
@@ -804,13 +804,13 @@ Please confirm this approach or let's discuss if urgent.
 
 Thanks,
 [Your Name]
-```
+```text
 
 ---
 
 ### Template 3: Communicating Accepted Major Change (Pivot)
 
-```
+```text
 TO: Product Owner, Engineering Manager, Team, Stakeholders
 SUBJECT: MAJOR CHANGE - [Feature Name] - Implementation Pivot
 
@@ -861,7 +861,7 @@ Current status: [Paused/Re-planning/Restarting]
 
 Thanks,
 [Your Name]
-```
+```text
 
 ---
 
@@ -869,7 +869,7 @@ Thanks,
 
 ### Scenario 1: UI Requirement Change (Minor - Accept)
 
-```
+```text
 SITUATION:
 ├─ Feature: Product Catalog
 ├─ Progress: 70% complete (coding product grid)
@@ -899,13 +899,13 @@ OUTCOME:
 ├─ Additional work: 4 hours
 ├─ Delivery delay: +0.5 days
 └─ Stakeholder satisfaction: High (got requested feature)
-```
+```text
 
 ---
 
 ### Scenario 2: Business Logic Change (Moderate - Defer)
 
-```
+```text
 SITUATION:
 ├─ Feature: E-commerce Checkout
 ├─ Progress: 50% complete (implementing payment processing)
@@ -940,13 +940,13 @@ OUTCOME:
 ├─ Payment plans: Clean implementation in next sprint
 ├─ Total effort saved: 8 hours (avoided rework)
 └─ Customer: Gets payment plans 2 weeks later (acceptable trade-off)
-```
+```text
 
 ---
 
 ### Scenario 3: Security Requirement (Critical - Accept Immediately)
 
-```
+```text
 SITUATION:
 ├─ Feature: User Profile Management
 ├─ Progress: 80% complete (almost done)
@@ -983,13 +983,13 @@ OUTCOME:
 ├─ Rework cost: 20 hours
 ├─ Security: Vulnerability fixed ✓
 └─ Result: Correct decision (security > schedule)
-```
+```text
 
 ---
 
 ### Scenario 4: Feature Creep (Low Priority - Reject)
 
-```
+```text
 SITUATION:
 ├─ Feature: Admin Dashboard
 ├─ Progress: 40% complete
@@ -1023,7 +1023,7 @@ OUTCOME:
 ├─ Chat feature: Properly scoped as separate initiative
 ├─ Product Owner: Understands scope boundaries
 └─ Backlog: Organized with separate priorities
-```
+```text
 
 ---
 
@@ -1031,7 +1031,7 @@ OUTCOME:
 
 ### 1. Always Assess Before Accepting
 
-```
+```text
 ❌ DON'T:
 └─ Immediately start coding the change without assessment
 
@@ -1040,13 +1040,13 @@ OUTCOME:
 ├─ Calculate rework cost vs. defer cost
 ├─ Make informed decision with stakeholders
 └─ Document rationale
-```
+```text
 
 ---
 
 ### 2. Use Spec Kit Artifacts as Single Source of Truth
 
-```
+```text
 ❌ DON'T:
 └─ Accept verbal change requests without updating spec.md
 
@@ -1055,13 +1055,13 @@ OUTCOME:
 ├─ Use /speckit.clarify to document clarifications
 ├─ Re-run /speckit.analyze after changes
 └─ Keep artifacts in sync
-```
+```text
 
 ---
 
 ### 3. Communicate Impact Clearly
 
-```
+```text
 ❌ DON'T:
 └─ "Sure, I can add that" (without understanding impact)
 
@@ -1070,13 +1070,13 @@ OUTCOME:
 ├─ Provide concrete numbers: hours, tasks affected, delivery delay
 ├─ Present options: accept now vs. defer
 └─ Get explicit approval for timeline changes
-```
+```text
 
 ---
 
 ### 4. Preserve Completed Work When Possible
 
-```
+```text
 ❌ DON'T:
 └─ Discard all completed work when change comes
 
@@ -1085,13 +1085,13 @@ OUTCOME:
 ├─ Refactor vs. rebuild decision
 ├─ Mark salvageable tasks clearly in tasks.md
 └─ Maximize reuse to reduce waste
-```
+```text
 
 ---
 
 ### 5. Make Defer the Default for Non-Critical Changes
 
-```
+```text
 ❌ DON'T:
 └─ Accept every change request to be "helpful"
 
@@ -1102,13 +1102,13 @@ OUTCOME:
 │  └─ Very early in implementation (<25% done)
 ├─ Finish current feature cleanly
 └─ Implement change as separate feature
-```
+```text
 
 ---
 
 ### 6. Use Feature Flags for Experimental Changes
 
-```
+```text
 ✓ DO (when appropriate):
 ├─ Implement change behind feature flag
 ├─ Deploy both versions
@@ -1116,20 +1116,20 @@ OUTCOME:
 └─ Flip flag or roll back based on results
 
 This avoids rework if change needs to be reverted.
-```
+```text
 
 ---
 
 ### 7. Track Change Request Metrics
 
-```
+```text
 ✓ DO:
 ├─ Track: Number of change requests per feature
 ├─ Track: Percentage of changes accepted vs. deferred
 ├─ Track: Average rework cost per accepted change
 ├─ Track: Reasons for changes (scope creep, unclear requirements, etc.)
 └─ Use in retrospectives to improve specification quality
-```
+```text
 
 ---
 
@@ -1137,7 +1137,7 @@ This avoids rework if change needs to be reverted.
 
 ### Anti-Pattern 1: "Yes to Everything"
 
-```
+```text
 ❌ PROBLEM:
 ├─ Accepting every change request without assessment
 ├─ Never saying no or defer
@@ -1147,13 +1147,13 @@ This avoids rework if change needs to be reverted.
 ├─ Use decision tree to evaluate objectively
 ├─ Make defer the default for non-critical changes
 └─ Get stakeholder buy-in for defer decisions
-```
+```text
 
 ---
 
 ### Anti-Pattern 2: "Scope Creep Acceptance"
 
-```
+```text
 ❌ PROBLEM:
 ├─ Feature grows from 20 tasks to 50 tasks
 ├─ "Just one more thing" repeated 10 times
@@ -1164,13 +1164,13 @@ This avoids rework if change needs to be reverted.
 ├─ Distinguish changes vs. new features
 ├─ Move new features to separate specs
 └─ Deliver incrementally (MVP first, enhancements later)
-```
+```text
 
 ---
 
 ### Anti-Pattern 3: "Undocumented Verbal Changes"
 
-```
+```text
 ❌ PROBLEM:
 ├─ "Can you change X to Y?" → "Sure!" → implements without updating spec
 ├─ No trace of what changed or why
@@ -1181,13 +1181,13 @@ This avoids rework if change needs to be reverted.
 ├─ Use /speckit.clarify to document decisions
 ├─ Keep artifacts in sync with implementation
 └─ Spec.md is single source of truth
-```
+```text
 
 ---
 
 ### Anti-Pattern 4: "Change Without Re-Analysis"
 
-```
+```text
 ❌ PROBLEM:
 ├─ Accept change, update spec.md, continue coding
 ├─ Skip /speckit.analyze
@@ -1198,13 +1198,13 @@ This avoids rework if change needs to be reverted.
 ├─ ALWAYS re-run /speckit.analyze
 ├─ Fix critical issues before continuing
 └─ Analysis is your safety net
-```
+```text
 
 ---
 
 ### Anti-Pattern 5: "Sunk Cost Fallacy"
 
-```
+```text
 ❌ PROBLEM:
 ├─ "We've invested 40 hours, we can't change now!"
 ├─ Proceed with wrong approach
@@ -1215,13 +1215,13 @@ This avoids rework if change needs to be reverted.
 ├─ Make decision based on forward-looking costs
 ├─ Sometimes pivoting late is still right decision
 └─ Compare: cost to pivot vs. cost of wrong solution in production
-```
+```text
 
 ---
 
 ## Summary: Decision Framework
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                   CHANGE REQUEST DECISION SUMMARY                       │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -1263,7 +1263,7 @@ KEY METRICS TO TRACK:
 ├─ Accept vs. defer ratio
 ├─ Average rework cost
 └─ Time to specification improvement
-```
+```text
 
 ---
 

@@ -30,7 +30,7 @@ scripts:
 
 ```text
 $ARGUMENTS
-```
+```text
 
 You **MUST** consider the user input before proceeding (if not empty).
 
@@ -274,7 +274,7 @@ Sample items:
 - [ ] CHK002 - Test hover states work correctly on desktop [Spec §FR-003]
 - [ ] CHK003 - Confirm logo click navigates to home page [Spec §FR-010]
 - [ ] CHK004 - Check that related episodes section shows 3-5 items [Spec §FR-005]
-```
+```text
 
 **✅ CORRECT - These test requirements quality:**
 
@@ -285,7 +285,7 @@ Sample items:
 - [ ] CHK004 - Is the selection criteria for related episodes documented? [Gap, Spec §FR-005]
 - [ ] CHK005 - Are loading state requirements defined for asynchronous episode data? [Gap]
 - [ ] CHK006 - Can "visual hierarchy" requirements be objectively measured? [Measurability, Spec §FR-001]
-```
+```text
 
 **Key Differences:**
 

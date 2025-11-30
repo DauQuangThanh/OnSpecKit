@@ -68,7 +68,7 @@ AGENT_CONFIG = {
         "requires_cli": True,  # True if CLI tool required, False for IDE-based agents
     },
 }
-```
+```text
 
 **Key Design Principle**: The dictionary key should match the actual executable name that users install. For example:
 
@@ -90,7 +90,7 @@ Update the `--ai` parameter help text in the `init()` command to include the new
 
 ```python
 ai_assistant: str = typer.Option(None, "--ai", help="AI assistant to use: claude, gemini, copilot, cursor-agent, qwen, opencode, codex, windsurf, kilocode, auggie, codebuddy, new-agent-cli, or q"),
-```
+```text
 
 Also update any function docstrings, examples, and error messages that list available agents.
 
@@ -111,7 +111,7 @@ Modify `.github/workflows/scripts/create-release-packages.sh`:
 
 ```bash
 ALL_AGENTS=(claude gemini copilot cursor-agent qwen opencode windsurf q)
-```
+```text
 
 ##### Add case statement for directory structure
 
@@ -122,7 +122,7 @@ case $agent in
     mkdir -p "$base_dir/.windsurf/workflows"
     generate_commands windsurf md "\$ARGUMENTS" "$base_dir/.windsurf/workflows" "$script" ;;
 esac
-```
+```text
 
 #### 4. Update GitHub Release Script
 
@@ -134,7 +134,7 @@ gh release create "$VERSION" \
   .genreleases/spec-kit-template-windsurf-sh-"$VERSION".zip \
   .genreleases/spec-kit-template-windsurf-ps-"$VERSION".zip \
   # Add new agent packages here
-```
+```text
 
 #### 5. Update Agent Context Scripts
 
@@ -144,7 +144,7 @@ Add file variable:
 
 ```bash
 WINDSURF_FILE="$REPO_ROOT/.windsurf/rules/specify-rules.md"
-```
+```text
 
 Add to case statement:
 
@@ -158,7 +158,7 @@ case "$AGENT_TYPE" in
     # Update default creation condition
     ;;
 esac
-```
+```text
 
 ##### PowerShell script (`scripts/powershell/update-agent-context.ps1`)
 
@@ -166,7 +166,7 @@ Add file variable:
 
 ```powershell
 $windsurfFile = Join-Path $repoRoot '.windsurf/rules/specify-rules.md'
-```
+```text
 
 Add to switch statement:
 
@@ -184,7 +184,7 @@ switch ($AgentType) {
         # Update default creation condition
     }
 }
-```
+```text
 
 #### 6. Update CLI Tool Checks (Optional)
 
@@ -200,7 +200,7 @@ elif selected_ai == "windsurf":
     if not check_tool("windsurf", "Install from: https://windsurf.com/"):
         console.print("[red]Error:[/red] Windsurf CLI is required for Windsurf projects")
         agent_tool_missing = True
-```
+```text
 
 **Note**: CLI tool checks are now handled automatically based on the `requires_cli` field in AGENT_CONFIG. No additional code changes needed in the `check()` or `init()` commands - they automatically loop through AGENT_CONFIG and check tools as needed.
 
@@ -232,7 +232,7 @@ AGENT_CONFIG = {
 cli_tool = agent_key
 if agent_key == "cursor":
     cli_tool = "cursor-agent"  # Map to the real tool name
-```
+```text
 
 ✅ **Correct approach** (no mapping needed):
 
@@ -245,7 +245,7 @@ AGENT_CONFIG = {
 }
 
 # No special cases needed - just use agent_key directly!
-```
+```text
 
 **Benefits of this approach:**
 
@@ -274,7 +274,7 @@ For agents available as VS Code extensions, add them to `.devcontainer/devcontai
     }
   }
 }
-```
+```text
 
 ##### CLI-based Agents
 
@@ -290,7 +290,7 @@ echo -e "\n🤖 Installing [New Agent Name] CLI..."
 # or other installation instructions (must be non-interactive and compatible with Linux Debian "Trixie" or later)...
 echo "✅ Done"
 
-```
+```text
 
 **Quick Tips:**
 
@@ -337,7 +337,7 @@ description: "Command description"
 ---
 
 Command content with {SCRIPT} and $ARGUMENTS placeholders.
-```
+```text
 
 **GitHub Copilot Chat Mode format:**
 
@@ -348,7 +348,7 @@ mode: speckit.command-name
 ---
 
 Command content with {SCRIPT} and $ARGUMENTS placeholders.
-```
+```text
 
 ### TOML Format
 
@@ -360,7 +360,7 @@ description = "Command description"
 prompt = """
 Command content with {SCRIPT} and {{args}} placeholders.
 """
-```
+```text
 
 ## Directory Conventions
 

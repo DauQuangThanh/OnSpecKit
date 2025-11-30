@@ -22,7 +22,7 @@ The CLI tool (`specify`) is separate from your project files. Upgrade it to get 
 
 ```bash
 uv tool install specify-cli --force --from git+https://github.com/github/spec-kit.git
-```
+```text
 
 ### If you use one-shot `uvx` commands
 
@@ -30,13 +30,13 @@ No upgrade needed—`uvx` always fetches the latest version. Just run your comma
 
 ```bash
 uvx --from git+https://github.com/github/spec-kit.git specify init --here --ai copilot
-```
+```text
 
 ### Verify the upgrade
 
 ```bash
 specify check
-```
+```text
 
 This shows installed tools and confirms the CLI is working.
 
@@ -72,7 +72,7 @@ Run this inside your project directory:
 
 ```bash
 specify init --here --force --ai <your-agent>
-```
+```text
 
 Replace `<your-agent>` with your AI assistant. Refer to this list of [Supported AI Agents](../README.md#-supported-ai-agents)
 
@@ -80,17 +80,17 @@ Replace `<your-agent>` with your AI assistant. Refer to this list of [Supported 
 
 ```bash
 specify init --here --force --ai copilot
-```
+```text
 
 ### Understanding the `--force` flag
 
 Without `--force`, the CLI warns you and asks for confirmation:
 
-```
+```text
 Warning: Current directory is not empty (25 items)
 Template files will be merged with existing content and may overwrite existing files
 Proceed? [y/N]
-```
+```text
 
 With `--force`, it skips the confirmation and proceeds immediately.
 
@@ -115,14 +115,14 @@ specify init --here --force --ai copilot
 
 # 3. Restore your customized constitution
 mv .specify/memory/constitution-backup.md .specify/memory/constitution.md
-```
+```text
 
 Or use git to restore it:
 
 ```bash
 # After upgrade, restore from git history
 git restore .specify/memory/constitution.md
-```
+```text
 
 ### 2. Custom template modifications
 
@@ -133,7 +133,7 @@ If you customized any templates in `.specify/templates/`, the upgrade will overw
 cp -r .specify/templates .specify/templates-backup
 
 # After upgrade, merge your changes back manually
-```
+```text
 
 ### 3. Duplicate slash commands (IDE-based agents)
 
@@ -153,7 +153,7 @@ ls -la
 # Delete old versions (example filenames - yours may differ)
 rm speckit.specify-old.md
 rm speckit.plan-v1.md
-```
+```text
 
 Restart your IDE to refresh the command list.
 
@@ -172,7 +172,7 @@ specify init --here --force --ai copilot
 
 # Restore your constitution if customized
 git restore .specify/memory/constitution.md
-```
+```text
 
 ### Scenario 2: "I customized templates and constitution"
 
@@ -190,7 +190,7 @@ specify init --here --force --ai copilot
 # 4. Restore customizations
 mv /tmp/constitution-backup.md .specify/memory/constitution.md
 # Manually merge template changes if needed
-```
+```text
 
 ### Scenario 3: "I see duplicate slash commands in my IDE"
 
@@ -207,7 +207,7 @@ ls -la
 rm speckit.old-command-name.md
 
 # Restart your IDE
-```
+```text
 
 ### Scenario 4: "I'm working on a project without Git"
 
@@ -222,7 +222,7 @@ specify init --here --force --ai copilot --no-git
 
 # Restore customizations
 mv /tmp/constitution-backup.md .specify/memory/constitution.md
-```
+```text
 
 The `--no-git` flag skips git initialization but doesn't affect file updates.
 
@@ -240,13 +240,13 @@ The `--no-git` flag tells Spec Kit to **skip git repository initialization**. Th
 
 ```bash
 specify init my-project --ai copilot --no-git
-```
+```text
 
 **During upgrade:**
 
 ```bash
 specify init --here --force --ai copilot --no-git
-```
+```text
 
 ### What `--no-git` does NOT do
 
@@ -268,7 +268,7 @@ export SPECIFY_FEATURE="001-my-feature"
 
 # PowerShell
 $env:SPECIFY_FEATURE = "001-my-feature"
-```
+```text
 
 This tells Spec Kit which feature directory to use when creating specs, plans, and tasks.
 
@@ -291,7 +291,8 @@ This tells Spec Kit which feature directory to use when creating specs, plans, a
    ls -la .gemini/commands/       # Gemini
    ls -la .cursor/commands/       # Cursor
    ```
-3. **Check agent-specific setup:**
+
+1. **Check agent-specific setup:**
    - Codex requires `CODEX_HOME` environment variable
    - Some agents need workspace restart or cache clearing
 
@@ -305,18 +306,18 @@ git restore .specify/memory/constitution.md
 
 # If you backed up manually
 cp /tmp/constitution-backup.md .specify/memory/constitution.md
-```
+```text
 
 **Prevention:** Always commit or back up `constitution.md` before upgrading.
 
 ### "Warning: Current directory is not empty"
 
 **Full warning message:**
-```
+```text
 Warning: Current directory is not empty (25 items)
 Template files will be merged with existing content and may overwrite existing files
 Do you want to continue? [y/N]
-```
+```text
 
 **What this means:**
 
@@ -372,14 +373,14 @@ uv tool list
 which specify
 
 # Should point to the uv tool installation directory
-```
+```text
 
 If not found, reinstall:
 
 ```bash
 uv tool uninstall specify-cli
 uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
-```
+```text
 
 ### "Do I need to run specify every time I open my project?"
 
@@ -405,13 +406,14 @@ Once you've run `specify init`, the slash commands (like `/speckit.specify`, `/s
    ls -la .claude/commands/
    ```
 
-2. **Restart your IDE/editor completely** (not just reload window)
+1. **Restart your IDE/editor completely** (not just reload window)
 
-3. **Check you're in the correct directory** where you ran `specify init`
+2. **Check you're in the correct directory** where you ran `specify init`
 
-4. **For some agents**, you may need to reload the workspace or clear cache
+3. **For some agents**, you may need to reload the workspace or clear cache
 
 **Related issue:** If Copilot can't open local files or uses PowerShell commands unexpectedly, this is typically an IDE context issue, not related to `specify`. Try:
+
 - Restarting VS Code
 - Checking file permissions
 - Ensuring the workspace folder is properly opened
